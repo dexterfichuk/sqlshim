@@ -729,7 +729,7 @@ class SqlShim
     echo "test";
     if ( stripos($sql, "select")>=0 )
     {
-      $sql = preg_replace("/SELECT .* FROM/", "SELECT * AS count FROM", $sql);
+      $sql = preg_replace("/SELECT .* FROM/", "SELECT COUNT(*) AS count FROM", $sql);
 
       var_dump($sql);
       $$cnt = $conn->query($sql);
